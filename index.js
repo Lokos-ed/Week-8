@@ -2,9 +2,7 @@
 
 
 
-//class Food
-    //name
-    //group
+//Creates the food class with the constructor of name and group.
 class Food {
     constructor(name, group) {
         this.name = name
@@ -12,10 +10,10 @@ class Food {
     }
 }
 
-//class Menu
+//Creates the menu class so all the necessary functions can be added into it.
 class Menu {
     constructor(){
-        //Food array
+        //Creates the array to store and display the added variables.
         this.foods=[];
     }
 
@@ -33,14 +31,14 @@ class Menu {
 
 
 
-//delete foods
+//Delete food from the array depending on user prompt.
 deleteFood(){
     let foodIndex = prompt("Enter food index to delete:");
     this.foods.splice(foodIndex, 1);
 }
 
 
-//view foods
+//Displays all foods in the array with an added message using template literals
     viewFoods(){
         let displayFoods = '';
         for(let i = 0; i < this.foods.length; i++){
@@ -53,7 +51,7 @@ deleteFood(){
         ${displayFoods}`);
     }
 
-    //show menu
+    //Creates a prompt with the message showing all the available options as well as storing the inputted value for later use.
     showMenu(){
         return prompt(` 
             Main Menu:
@@ -65,7 +63,9 @@ deleteFood(){
             `);
     }
 
-    //start menu
+    //This uses the value from the showMenu function to tell the program which function to call upon. It will keep running until the inputted value = 0.
+    //It checks for the inputted value to match one of the three cases then breaks and repeats the process again.
+    //The default selection = 0, meaning if nothing is entered, the menu will close on it's own. Else, if a number that is not 0-3 is entered, the list will default back to the original prompt.
     start(){
         let selection = this.showMenu();
 
@@ -89,7 +89,7 @@ deleteFood(){
 
 }
 
-
+//This creates a instance under the Menu class. This is so the program can utilize all the functions within the Menu class and then start the Menu.
 let menu = new Menu();
 
 menu.start();
