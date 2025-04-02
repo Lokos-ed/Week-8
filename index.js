@@ -89,7 +89,7 @@ deleteFood(){
 
 }
 
-//This creates a instance under the Menu class. This is so the program can utilize all the functions within the Menu class and then start the Menu.
+//This creates a instance of the Menu class. This is so the program can utilize all the functions within the Menu class and then start the Menu.
 let menu = new Menu();
 
 menu.start();
